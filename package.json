@@ -1,0 +1,20 @@
+{
+  "name": "burger-app",
+  "version": "1.0.0",
+  "description": "A burger logger with MySQL, Node, Express, Handlebars and a homemade ORM",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexgignilliat/Burger-App.git"
+  },
+  "author": "Alex Gignilliat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexgignilliat/Burger-App/issues"
+  },
+  "homepage": "https://github.com/alexgignilliat/Burger-App#readme"
+}
