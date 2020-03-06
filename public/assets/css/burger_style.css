@@ -1,0 +1,52 @@
+body {
+
+
+}
+
+p {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+}
+
+.burgerContainer {
+    width: 100%;
+    background-color: rgba(197, 197, 197, 0.562);
+    height: 400px;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px auto;
+    border: 1px rgb(197, 197, 197) solid;
+}
+
+.burgerImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    margin: 20px auto;
+    display: flex;
+}
+
+.burgerQueue {
+    text-align: center;
+    background-color: rgba(197, 197, 197, 0.562);
+    display: flex;
+    font-size: 20px;
+    margin: 3px;
+    letter-spacing: 3px;
+    border-radius: 10px;
+}
+
+.burgerDevoured {
+    text-align: center;
+    background-color: rgba(197, 197, 197, 0.562);
+    display: flex; 
+    font-size: 20px;
+    margin: 3px;
+    letter-spacing: 3px;
+    border-radius: 10px;
+}
