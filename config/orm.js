@@ -1,4 +1,4 @@
-// Import MySQL connection.
+// Import MySQL connection
 const connection = require("../config/connection.js");
 
 
@@ -9,25 +9,6 @@ function printQuestionMarks(num) {
     arr.push("?");
   }
 
-  return arr.toString();
-}
-// Helper function to convert object key/value pairs to SQL syntax
-function objToSql(ob) {
-  let arr = [];
-  // loop through the keys and push the key/value as a string int arr
-  for (let key in ob) {
-    let value = ob[key];
-    // check to skip hidden properties
-    if (Object.hasOwnProperty.call(ob, key)) {
-      // if string with spaces, add quotations 
-      if (typeof value === "string" && value.indexOf(" ") >= 0) {
-        value = "'" + value + "'";
-      }
-      // example {devoured: true} => ["devoured=true"]
-      arr.push(key + "=" + value);
-    }
-  }
-  // Translate array of strings to a single comma-separated string
   return arr.toString();
 }
 
@@ -46,7 +27,7 @@ let orm = {
   },
 
   // ORM method that inserts a new row into the table
-  insertOne: function(table, cols, vals, cb) {
+  insert: function (table, cols, vals, cb) {
     let queryString = "INSERT INTO " + table;
 
     queryString += " (";
@@ -68,7 +49,7 @@ let orm = {
   },
 
   // ORM method that updates the Boolean devoured in the table
-  updateOne: function (table, colVal, condition, cb) {
+  update: function (table, colVal, condition, cb) {
     let queryString = "UPDATE " + table + " SET " + "devoured = 1" + " WHERE " + "ID = " + condition + ";"
     connection.query(queryString, function (err, response) {
       console.log(queryString);
@@ -77,7 +58,7 @@ let orm = {
       cb(response);
     })
   },
-  deleteOne: function(table, condition, cb){
+  delete: function (table, condition, cb) {
     const queryString = "DELETE FROM " + table + " WHERE " + condition;
     connection.query(queryString, function (err, response) {
       console.log(queryString);
@@ -88,5 +69,5 @@ let orm = {
   }
 }
 
-// Export the orm object for the model (burger.js).
+// Export the orm object for the model (burger.js)
 module.exports = orm;

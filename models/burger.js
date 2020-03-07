@@ -6,18 +6,18 @@ let burger = {
             cb(res);
         });
     },
-    insertOne: function (val, cb) {
-        orm.insertOne("burgers", "burger_name", val, function (res) {
+    insert: function (val, cb) {
+        orm.insert("burgers", "burger_name", val, function (res) {
             cb(res);
         });
     },
-    updateOne: function (colVal, condition, cb) {
-        orm.updateOne("burgers", colVal, condition, function (res) {
+    update: function (colVal, condition, cb) {
+        orm.update("burgers", colVal, condition, function (res) {
             cb(res);
         });
     },
-    deleteOne: function (condition, cb) {
-        orm.deleteOne("burgers", condition, function (res) {
+    delete: function (condition, cb) {
+        orm.delete("burgers", condition, function (res) {
             cb(res)
         })
     }

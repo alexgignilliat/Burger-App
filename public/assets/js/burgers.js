@@ -1,7 +1,6 @@
 $(() => {
     $(".create-form").on("submit", function () {
         event.preventDefault();
-        console.log("")
 
         let newBurger = {
             burger_name: $("#newburger").val().trim(),
@@ -11,20 +10,23 @@ $(() => {
         console.log(newBurger)
 
 
-        $.ajax("/api/burgers", {
-            type: "POST",
-            data: newBurger
-        }).then(function () {
-            console.log("Added new burger")
-            location.reload()
+        if (newBurger.burger_name.length > 0) {
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+            }).then(function () {
+                console.log("Added new burger")
+                location.reload()
 
-        })
+            })
+        } else {
+            alert("Nice try. :)")
+        }
     })
+
 
     $(".devour").on("click", function () {
         let id = $(this).data('id');
-        console.log(id)
-
         $.ajax('/api/burgers/' + id, {
             type: 'PUT',
             data: {

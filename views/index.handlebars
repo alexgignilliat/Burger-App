@@ -1,49 +1,68 @@
 <div class="container">
     <div class="row">
         <div class="burgerContainer col-12">
-            <p class="title">Eat-Da-Burger!</p>
-            <img class="burgerImage" src="https://images-na.ssl-images-amazon.com/images/I/71tyeXeFPsL._SX679_.jpg">
-
-            <form class="create-form">
-                <div class="form-group">
-                    <label for="ca">Burger Name:</label>
-                    <input id="newburger" type="text" id="ca" name="name">
-                </div>
-                <button type="submit">Add Burger</button>
-            </form>
-
-        </div>
-    </div>
-    <div class="row d-flex justify-content-center">
-        <div class="burgerQueue col-5">
-            <p>Burgers Ready To Eat!</p>
-            <br>
+            <p class="title"><strong>The Best Burger App Ever!</strong></p>
+            <img class="burgerImage"
+                src="https://images.vexels.com/media/users/3/143047/isolated/preview/b0c9678466af11dd45a62163bdcf03fe-fast-food-hamburger-flat-icon-by-vexels.png">
             <div class="row">
-                <div class="col-12">
-                    <ul>
-                        {{#each burger}}
-                        {{#unless devoured}}
-                        <span>{{this.burger_name}}</span>
-                        <button type="button" class="devour" data-id="{{this.id}}"></span>Devour!</button>
-                        <hr>
-                        {{/unless}}
-                        {{/each}}
-                    </ul>
+                <div class="col-12 d-flex justify-content-center">
+                    <form class="create-form">
+                        <div class="form-group">
+                            <p style="margin: -20px; font-size: 20px"><strong>Burger Name:</strong>
+                                <p>
+                                    <br>
+                                    <input style="border-radius: 3px; outline: none; text-align: center" id="newburger"
+                                        type="text">
+                        </div>
+                        <div class="row">
+                            <button style="margin: 0 auto;" class="btn btn-secondary" type="submit">Add Burger</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <div class="burgerDevoured col-5">
-            <p>Burgers Devoured</p>
-            <br>
-            <ul>
-                {{#each burger}}
-                {{#if devoured}}
-                <span>{{this.burger_name}}</span>
-                <button type="button" class="delete" data-id="{{this.id}}"><span></span>Delete!</button>
-                <hr>
-                {{/if}}
-                {{/each}}
-            </ul>
-        </div>
     </div>
-</div>
+    <div class="row d-flex justify-content-center">
+        <div class="burgerQueue d-flex justify-content-center col-5">
+            <div class="container">
+                <div class="row">
+                    <p>Burgers Ready To Eat:</p>
+                    <div class="col-12">
+                        <ul>
+                            {{#each burger}}
+                            {{#unless devoured}}
+                            <div style="margin: 5px auto;">
+                                <strong>{{this.burger_name}}</strong>
+                                <br>
+                                <button type="button" class="devour btn btn-success"
+                                    data-id="{{this.id}}">Devour!</button>
+                                <hr>
+                            </div>
+                            {{/unless}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="burgerDevoured d-flex justify-content-center col-5">
+            <div class="container">
+                <div class="row">
+                    <p>Burgers Devoured:</p>
+                    <div class="col-12">
+                        <ul>
+                            {{#each burger}}
+                            {{#if devoured}}
+                            <div style="margin: 5px auto;">
+                                <strong>{{this.burger_name}}</strong>
+                                <br>
+                                <button type="button" class="delete btn btn-danger"
+                                    data-id="{{this.id}}">Delete!</button>
+                                <hr>
+                            </div>
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>

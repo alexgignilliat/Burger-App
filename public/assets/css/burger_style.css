@@ -1,6 +1,6 @@
 body {
-
-
+    background-image: url("https://cdn.hipwallpaper.com/i/58/56/i0BkN7.jpg");
+    background-size: cover;
 }
 
 p {
@@ -15,7 +15,7 @@ p {
 
 .burgerContainer {
     width: 100%;
-    background-color: rgba(197, 197, 197, 0.562);
+    background-color: rgba(255, 255, 255, 0.514);
     height: 400px;
     border-radius: 20px;
     padding: 20px;
@@ -29,11 +29,14 @@ p {
     border-radius: 20px;
     margin: 20px auto;
     display: flex;
+    opacity: .8;
+    filter: hue-rotate(180deg)
 }
+
 
 .burgerQueue {
     text-align: center;
-    background-color: rgba(197, 197, 197, 0.562);
+    background-color: rgba(255, 255, 255, 0.514);
     display: flex;
     font-size: 20px;
     margin: 3px;
@@ -41,12 +44,38 @@ p {
     border-radius: 10px;
 }
 
+input:hover{
+    box-shadow: 0px 0px 5px white;
+}
+
 .burgerDevoured {
     text-align: center;
-    background-color: rgba(197, 197, 197, 0.562);
+    background-color: rgba(255, 255, 255, 0.514);
     display: flex; 
     font-size: 20px;
     margin: 3px;
     letter-spacing: 3px;
     border-radius: 10px;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.btn {
+    border-radius: 12px;
+}
+
+.btn:hover{
+    box-shadow: 0px 0px 5px rgb(255, 255, 255);
+}
+
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    height: 20px;
+    text-align: center;
+    background-color: white;
 }

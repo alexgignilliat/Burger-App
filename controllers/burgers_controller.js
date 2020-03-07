@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 });
 //POST route which will post a new burger
 router.post("/api/burgers", (req, res) => {
-  burger.insertOne([req.body.burger_name], function(result) {
+  burger.insert([req.body.burger_name], function(result) {
     res.redirect('/')
   });
 });
@@ -23,7 +23,7 @@ router.post("/api/burgers", (req, res) => {
 router.put("/api/burgers/:id", (req, res) => {
   let condition = req.params.id;
   console.log(condition)
-  burger.updateOne(
+  burger.update(
     {
       devoured: req.body.devoured
     },
@@ -40,7 +40,7 @@ router.put("/api/burgers/:id", (req, res) => {
 router.delete("/api/burgers/:id", (req, res) => {
   let condition = "id = " + req.params.id;
 
-  burger.deleteOne(condition, function(result) {
+  burger.delete(condition, function(result) {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
