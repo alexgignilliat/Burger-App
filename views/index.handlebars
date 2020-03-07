@@ -19,17 +19,17 @@
             <p>Burgers Ready To Eat!</p>
             <br>
             <div class="row">
-            <div class="col-12">
-            <ul>
-                {{#each burger}}
-                {{#unless devoured}}
-                <span>{{this.burger_name}}</span>
-                <button type="button" class="devour" data-id="{{this.id}}"></span>Devour!</button>
-                <hr>
-                {{/unless}}
-                {{/each}}
-            </ul>
-            </div>
+                <div class="col-12">
+                    <ul>
+                        {{#each burger}}
+                        {{#unless devoured}}
+                        <span>{{this.burger_name}}</span>
+                        <button type="button" class="devour" data-id="{{this.id}}"></span>Devour!</button>
+                        <hr>
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="burgerDevoured col-5">
