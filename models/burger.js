@@ -1,5 +1,6 @@
+//import ORM
 let orm = require("../config/orm.js");
-
+//object that contains database functions
 let burger = {
     selectAll: function (cb) {
         orm.selectAll("burgers", function (res) {
@@ -22,6 +23,5 @@ let burger = {
         })
     }
 };
-
-// Export the database functions for the controller (burgers_controller.js).
+// export burger to burgers_controller.js
 module.exports = burger;

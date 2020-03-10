@@ -1,9 +1,8 @@
-// Requiring express
 const express = require("express");
 const router = express.Router();
-// Import the model (burger.js) to use its database functions.
+//Import model(burger.js)
 const burger = require("../models/burger.js");
-// Create all our routes and set up logic within those routes where required.
+//GET all data from table and render to index.handlebars
 router.get("/", (req, res) => {
   burger.selectAll((data) => {
     let hbsObject = {
@@ -12,14 +11,14 @@ router.get("/", (req, res) => {
     res.render("index", hbsObject);
   });
 });
-//POST route which will post a new burger
+//POST user input/new burger 
 router.post("/api/burgers", (req, res) => {
   burger.insert([req.body.burger_name], function(result) {
     res.redirect('/')
   });
 });
 
-// PUT route which will update the boolean devoured
+// PUT (update) devoured boolean for the corresponding ID
 router.put("/api/burgers/:id", (req, res) => {
   let condition = req.params.id;
   console.log(condition)
@@ -36,10 +35,9 @@ router.put("/api/burgers/:id", (req, res) => {
     }
   })
 });
-//DELETE route which will delete selected burger by ID
+//DELETE selected burger by ID
 router.delete("/api/burgers/:id", (req, res) => {
   let condition = "id = " + req.params.id;
-
   burger.delete(condition, function(result) {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
@@ -49,6 +47,5 @@ router.delete("/api/burgers/:id", (req, res) => {
     }
   });
 });
-
 // Export routes for server.js to use.
 module.exports = router;

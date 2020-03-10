@@ -1,4 +1,4 @@
-// Set up MySQL connection.
+//Setting up connection to mysql
 const mysql = require("mysql");
 let connection;
 if (process.env.JAWSDB_URL) {
@@ -11,12 +11,12 @@ if (process.env.JAWSDB_URL) {
     database: 'burgers_db'
   });
 }
-// Make connection.
+// Makeing the connection
 connection.connect((err) => {
   if (err) {
     console.log(err);
   }
   console.log("connected as id " + connection.threadId);
 })
-// Export connection for our ORM to use.
+// Export connection to require inside orm.js
 module.exports = connection;
